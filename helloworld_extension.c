@@ -11,9 +11,22 @@ hello(PyObject *self,PyObject *args)
 	return Py_None;
 }
 
+static PyObject *
+addition(PyObject *self,PyObject *args)
+{
+	int a,b,c;
+	a=1;
+	b=2;
+	c= a + b;
+	// printf("%d\n",c);
+	return Py_None;
+}
+
+
+
 static PyMethodDef HelloMethods[] = {
-    {"hello",  hello, METH_VARARGS,
-     "Execute a shell command."},
+    {"hello",  hello, METH_VARARGS,"Print Hello World"},
+    {"addition",addition,METH_VARARGS,"Do some simple addition"},
     {NULL, NULL, 0, NULL}        /* Sentinel */
 };
 
@@ -21,4 +34,5 @@ PyMODINIT_FUNC
 inithello(void)
 {
     (void) Py_InitModule("hello", HelloMethods);
+    (void) Py_InitModule("addition",HelloMethods);
 }
