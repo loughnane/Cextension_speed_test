@@ -31,6 +31,14 @@ $ python speedTest.py
 
 Sample Output
 ----
+
+I've ran this code on two machines: a Lenovo Thinkpad and a Beaglebone Black. The differences are interesting
+
+* Lenovo ThinkPad , Ubuntu 12.04, 32-bit 2.0GB RAM, Intel Core 2 Duo CPU L7100 @ 1.20GHzx2
+* Beaglebone Black, Angstrom, 32-bit, 512MB RAM, AM335x 1GHz ARM Cortex-A8.
+
+
+Thinkpad output
 ```
 $ python helloworld.py 
 This is from Popen
@@ -56,5 +64,35 @@ Addition with Input Averages
 Python:          0.691413879395 us per loop
 Popen:           6317.59166718 us per loop
 Cextension:      1.19209289551 us per loop
+
+```
+
+Beaglebone output
+```
+$ python helloworld.py 
+This is from Popen
+...
+...
+This is from the extension
+...
+...
+This is from Python
+...
+...
+Hello Averages:
+Python:  641.405582428 us per loop
+Popen: 		9744.70376968 us per loop
+Cextension:	401.890277863 us per loop
+ 
+Addition Averages
+Python: 	25.5942344666 us per loop
+Popen: 		9137.89272308 us per loop
+Cextension:	5.19752502441 us per loop
+ 
+Addition with Input Averages
+Python:          6.79492950439 us per loop
+Popen:           8907.79495239 us per loop
+Cextension:      8.0943107605 us per loop
+
 
 ```
