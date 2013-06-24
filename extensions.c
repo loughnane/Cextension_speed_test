@@ -1,11 +1,12 @@
-#include <Python.h> 
+#include <Python.h> //pulls in the python API, which includes <stdio.h>,<string.h>, <errno.h>, and <stdlib.h> 
+
 /*
-This pulls in the python API, which includes
-<stdio.h>,<string.h>, <errno.h>, and <stdlib.h> 
+This code was built following the instructions from http://docs.python.org/2/extending/extending.html
+The documentation there is very good.
 */
 
 static PyObject *
-hello(PyObject *self,PyObject *args)
+hello(PyObject *self,PyObject *args) 
 {
 	puts("This is from the extension");
 	return Py_None;
@@ -18,10 +19,8 @@ addition(PyObject *self,PyObject *args)
 	a=1;
 	b=2;
 	c= a + b;
-	// printf("%d\n",c);
 	return Py_None;
 }
-
 
 static PyObject *
 addition_with_inputs(PyObject *self,PyObject *args)
@@ -35,9 +34,7 @@ addition_with_inputs(PyObject *self,PyObject *args)
 	return Py_BuildValue("i",c);
 }
 
-
-
-static PyMethodDef HelloMethods[] = {
+static PyMethodDef ExtensionMethods[] = {
     {"hello",  hello, METH_VARARGS,"Print Hello World"},
     {"addition",addition,METH_VARARGS,"Do some simple addition"},
     {"addition_with_inputs",addition_with_inputs,METH_VARARGS,"Add some inputs together"},
@@ -45,9 +42,7 @@ static PyMethodDef HelloMethods[] = {
 };
 
 PyMODINIT_FUNC
-inithello(void)
+initcextension(void)
 {
-    (void) Py_InitModule("hello", HelloMethods);
-    (void) Py_InitModule("addition",HelloMethods);
-    (void) Py_InitModule("addition_with_inputs",HelloMethods);
+    (void) Py_InitModule("cextension", ExtensionMethods);
 }

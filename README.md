@@ -43,17 +43,18 @@ This is from Python
 ...
 ...
 Hello Averages:
-Python:   80.4686546326 us per loop
-Popen: 		1529.25014496 us per loop
-Cextension:	48.5014915466 us per loop
+Python: 	9.79900360107 us per loop
+Popen: 		1905.10749817 us per loop
+Cextension:	8.79764556885 us per loop
  
 Addition Averages
-Python: 	0.369548797607 us per loop
-Popen: 		1381.39009476 us per loop
-Cextension:	0.400543212891 us per loop
+Python: 	0.810623168945 us per loop
+Popen: 		1633.50105286 us per loop
+Cextension:	0.786781311035 us per loop
  
 Addition with Input Averages
-Python:  0.379085540771 us per loop
-Popen:       65901.2103081 us per loop
-Cextension:  657.98997879 us per loop
+Python:          0.691413879395 us per loop
+Popen:           6317.59166718 us per loop
+Cextension:      1.19209289551 us per loop
+
 ```
