@@ -1,7 +1,7 @@
 
 #These functions use Popen to call compiled C functions
 def hello_Popen():
-	Popen(["./helloworld"])
+	Popen(["./hello"])
 
 def addition_Popen():
 	Popen(["./addition"])
