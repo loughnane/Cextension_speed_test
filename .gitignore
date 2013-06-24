@@ -15,3 +15,6 @@
 *.exe
 *.out
 *.app
+
+#sftp config files
+sftp-config.json
